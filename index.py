@@ -34,7 +34,6 @@ def createPassword(password_length, whats_password_for):
     symbols = string.punctuation;
 
     all_chars = uppercase_letters + lowercase_letters + numbers + symbols;
-    print(all_chars)
 
     # Create the basic 8 long password(2 lowercase and uppercase letters, 2 numbers, 2 symbols)
     for i in range(2):
@@ -42,11 +41,11 @@ def createPassword(password_length, whats_password_for):
         password = password + random.choice(lowercase_letters);
         password = password + random.choice(numbers);
         password = password + random.choice(symbols);
-    print(password)
 
     # Create the rest of the password(8 + n)
-    for i in range(what_to_add):
-        password = password + random.choice(all_chars)
+    if(password_length > 8):
+        for i in range(what_to_add):
+            password = password + random.choice(all_chars)
     
     savePassword(password, whats_password_for)
 
@@ -55,7 +54,7 @@ def createPassword(password_length, whats_password_for):
 def savePassword(password, whats_password_for):
     print("Hello");
 
-def savePassword():
+def getPassword():
     print("Hello");
 
 
